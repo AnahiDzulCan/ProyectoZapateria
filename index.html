@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- enlazado con el style -->
+     <link rel="stylesheet" href="/assets/styles.css">
+         <!-- CDN Iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>Home</title>
+</head>
+<body>
+    <!-- menuHome -->
+    <header>
+        <div class="px-3 py-2 border-bottom" id="header-menu">
+          <div class="container">
+            <div class="d-flex flex-wrap  justify-content-lg-start">
+              <a href="/" class="d-flex my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                <img class="d-flex-start"  src="/assets/logo.png" alt="logo">
+        <!-- eslogan empresa -->
+                 <div class="justify-content-center p-3"> <h2 id="app"></h2></div>
+        <!-- terminaeslogan -->
+              </a>
+              <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 p-3 text-small">
+                <li> <a href="/index.html" class="nav-link text-secondary"> Home<i class="bi bi-house-fill"></i></a> </li>
+
+                <li> <a href="/registrarse.html" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a> </li>
+
+                <li> <a href="#" class="nav-link text-white"> <i class="bi bi-cart-fill"></i> Carrito</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+     <!-- termina el menu home -->
+
+        <!-- para inicio o registro -->
+        <div class="px-3 py-2 border-bottom mb-3">
+          <div class="container d-flex flex-wrap justify-content-lg-start">
+            <div class="text-end">
+              <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="/registrarse.html">Registrate</a></button>
+              <button type="button" class="btn btn-light text-dark"  id="btns"><a href="/InicioSesion.html">Iniciar Sesión</a></button>
+            </div>
+          </div>
+        </div> 
+        
+      </header>
+      <main>
+         <!-- carrusel con bootstrap -->
+         <div class="Carrusel p-4 justify-content-center">
+
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    
+                <div class="carousel-inner">
+                    <!-- iniciacard -->
+                  <div class="carousel-item active">
+                    <div class="d-flex justify-content-center" id="ContCarrusel-foto">
+                      <img src="assets/zapatos1.jpg" class="d-block img-fluid" alt="Anuncio 1">
+                  </div>
+                </div>
+                  <!-- terminacard -->
+    
+                   <!-- iniciacard -->
+                  <div class="carousel-item">
+                    <div class="d-flex justify-content-center" id="ContCarrusel-foto">
+                        <img src="assets/zapatos2.jpg" class="d-block img-fluid" alt="Anuncio 2">
+                </div>
+                </div>
+                  <!-- terminacard -->
+                
+                <!-- iniciacard -->
+                <div class="carousel-item">
+                        <div class="d-flex justify-content-center" id="ContCarrusel-foto">
+                            <img src="assets/zapatos3.jpg" class="d-block img-fluid" alt="Anuncio 3">
+                    </div>
+               </div>
+    
+                   <!-- iniciacard -->
+                  <div class="carousel-item">
+                    <div class="d-flex justify-content-center" id="ContCarrusel-foto">
+                        <img src="assets/zapatos4.jpg" class="d-block img-fluid" alt="Anuncio 4">
+                  </div>
+                </div>
+
+                </div>
+                <!-- terminacard -->
+    
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+    
+              </div>
+        </div>
+     
+      <!-- termina carrusel -->
+
+      <!-- Mision y vision empresa -->
+      <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Misión y visión</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                <i class="bi bi-bullseye"></i>
+            </div>
+            <h3 class="fs-2 text-body-emphasis">Misión</h3>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            <a href="#" class="icon-link">
+              Call to action
+              <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+            </a>
+          </div>
+          <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                <i class="bi bi-eye"></i>
+            </div>
+            <h3 class="fs-2 text-body-emphasis">Visión</h3>
+            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            <a href="#" class="icon-link">
+              Call to action
+              <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+
+       <!-- termina misión y vision -->
+      </main>
+
+
+      <!-- script = funcionalidad para los elementos -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+
+            <!-- para footer -->
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"  id="footer" >
+                <div class="col-md-4 d-flex align-items-center">
+                  <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+                  </a>
+                  <span class="mb-3 mb-md-0 text-body-secondary">© Zapateria "Maria jose" </span>
+                </div>
+            
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                  <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-whatsapp fs-3"></i></li>
+                  <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram fs-3"></i></li>
+                  <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-facebook fs-3"></i></li>
+                  <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-twitter-x fs-3"></i></li>
+                </ul>
+              </footer>
+            <!-- termina el footer -->
+
+    <!-- CDN JS, TEXTO MOVIMIENTO -->
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <!-- main js -->
+     <script src="/assets/Js.js"></script>
+</body>
+</html>

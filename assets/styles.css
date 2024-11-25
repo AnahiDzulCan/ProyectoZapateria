@@ -1,0 +1,25 @@
+body{
+    font-family: "Lora", serif;
+}
+
+#header-menu {
+    background-color:  #b0b6d2e1; 
+}
+
+#ContCarrusel-foto{
+    height: 600px;
+}
+
+#footer{
+    background-color:  #b0b6d2e1; 
+}
+
+#btns{
+    background-color:  #b0b6d2e1; 
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+

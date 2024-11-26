@@ -1,0 +1,57 @@
+body{
+    font-family: "Lora", serif;
+}
+
+#header-menu {
+    background-color:  #b0b6d2e1; 
+}
+
+#ContCarrusel-foto{
+    height: 600px;
+}
+
+#footer{
+    background-color:  #b0b6d2e1; 
+}
+
+#btns{
+    background-color:  #b0b6d2e1; 
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe toda la pantalla */
+    margin: 0; /* Quita márgenes predeterminados */
+  }
+
+
+    /* Estilos para la alerta flotante */
+    .toast {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #333;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }

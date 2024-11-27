@@ -8,7 +8,6 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- enlazado con el style -->
      <link rel="stylesheet" href="/assets/styles.css">
-     <link rel="stylesheet" href="/assets/Js.js">
          <!-- CDN Iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- fonts -->
@@ -22,23 +21,19 @@
     <!-- menuHome -->
     <header>
         <div class="px-3 py-2 border-bottom" id="header-menu">
-          <div class="container">
-            <div class="d-flex flex-wrap  justify-content-lg-start">
-              <a href="/" class="d-flex my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <img class="d-flex-start"  src="/assets/logo.png" alt="logo">
-        <!-- eslogan empresa -->
-                 <div class="justify-content-center p-3"> <h2 id="app"></h2></div>
-        <!-- terminaeslogan -->
+          <div class="container1">
+            <div class="containerlogo d-flex justify-content-between align-items-center p-3">
+              <!-- Logo -->
+              <a href="/" class="d-flex align-items-center text-white text-decoration-none">
+                <img class="logo" src="/assets/logo.png" alt="logo">
+                <h5 class="m-3">Zapatería "María Jose"</h5>
               </a>
-              <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 p-3 text-small">
-                <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-house-fill"></i>Home</a> </li>
-
-                <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a> </li>
-
-                <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-cart-fill"></i> Carrito</a></li>
-
-                <li><a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-person-heart">Perfil</i></a>   <!-- Crear acordion para desplegar el cerra sesión, modificar datos -->
-
+              <!-- Menú -->
+              <ul class="nav">
+                <li><a href="/home.html" class="nav-link text-white"><i class="bi bi-house-fill"></i> Home</a></li>
+                <li><a href="/productos.html" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
+                <li><a href="/carrito.html" class="nav-link text-white"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+                <li><a href="/usuario.html" class="nav-link text-white"><i class="bi bi-person-heart"></i> Perfil</a></li>
               </ul>
             </div>
           </div>
@@ -56,7 +51,12 @@
         </div> 
         
       </header>
+
       <main>
+
+        <div class="ms-3 d-flex justify-content-center">
+          <h2 id="app">Zapatería</h2>
+        </div>
 
          <!-- Alerta flotante -->
          <div id="miToast" class="toast">¡Necesitas estar suscrito o inicar sesión!</div>
@@ -145,8 +145,10 @@
         
       </main>
 
+      
+
         <!-- Footer -->
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top" id="footer">
     <div class="col-md-4 d-flex align-items-center">
       <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
@@ -154,7 +156,7 @@
       <span class="mb-3 mb-md-0 text-body-secondary">© Zapatería "María José"</span>
     </div>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <ul class="nav col-md-4 justify-content list-unstyled d-flex">
       <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
       <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
       <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
@@ -163,13 +165,13 @@
 </footer>
 
       <!-- script = funcionalidad para los elementos -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+crossorigin="anonymous"></script>
 
     <!-- CDN JS, TEXTO MOVIMIENTO -->
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <!-- main js -->
-     <script src="/assets/Js.js"></script>
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+<!-- main js -->
+<script src="/assets/Js.js"></script>
 </body>
 </html>

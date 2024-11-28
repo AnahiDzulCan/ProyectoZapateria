@@ -2,6 +2,12 @@
 
 session_start();
 
+// Verifica si el usuario está autenticado
+if (!isset($_SESSION['idUsuario'])) {
+    header("Location: ../InicioSesion.html"); // Redirige si no está autenticado
+    exit();
+}
+
 include_once 'UsuarioController.php';
 
 // Crear instancia del controlador
@@ -31,7 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['accion']) && $_POST['a
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <!-- enlazado con el style -->
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
     <h2>Lista de Usuarios</h2>
@@ -75,6 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['accion']) && $_POST['a
         <p>No hay usuarios registrados.</p>
     <?php endif; ?>
 
-    <button onclick="window.location.href='../registro.html'">Regresar</button>
+    <button onclick="window.location.href='../productosAdmin.php'">Regresar</button>
 </body>
 </html>

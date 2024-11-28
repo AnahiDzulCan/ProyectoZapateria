@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+// Verifica si el usuario está autenticado
+if (!isset($_SESSION['idUsuario'])) {
+  header("Location: InicioSesion.html"); // Redirige si no está autenticado
+  exit();
+}
+
 $idRol = $_SESSION['idRol'];
 
 if($idRol==1){
@@ -107,17 +113,17 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
                       </div> -->
 
                       <div class="dropdown" data-bs-theme="light">
-    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
-        Filtrar
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
-        <li><a class="dropdown-item" href="?filtroGenero=2">Dama</a></li>
-        <li><a class="dropdown-item" href="?filtroGenero=1">Caballero</a></li>
-        <li><a class="dropdown-item" href="?filtroCategoria=3">Sandalia</a></li>
-        <li><a class="dropdown-item" href="?filtroCategoria=2">Tacon</a></li>
-        <li><a class="dropdown-item" href="?filtroCategoria=1">Tenis</a></li>
-        <li><a class="dropdown-item" href="?filtroCategoria=4">Chancla</a></li>
-        <li><hr class="dropdown-divider"></li>
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
+                Filtrar
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
+                    <li><a class="dropdown-item" href="?filtroGenero=2">Dama</a></li>
+                    <li><a class="dropdown-item" href="?filtroGenero=1">Caballero</a></li>
+                    <li><a class="dropdown-item" href="?filtroCategoria=3">Sandalia</a></li>
+                    <li><a class="dropdown-item" href="?filtroCategoria=2">Tacon</a></li>
+                    <li><a class="dropdown-item" href="?filtroCategoria=1">Tenis</a></li>
+                    <li><a class="dropdown-item" href="?filtroCategoria=4">Chancla</a></li>
+                    <li><hr class="dropdown-divider"></li>
         <li>
             <form class="p-2 mb-2 bg-body-tertiary border-bottom" method="GET">
                 <input type="number" name="filtroTalla" class="form-control" placeholder="Talla" min="1" max="50">
@@ -155,8 +161,7 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
                                 </ul>
                                 <p class="card-text"><?php echo htmlspecialchars($producto_row['Descripcion']); ?></p>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="button" id="btns" class="btn btn-outline">Ver</button>
-                                    <button type="button" id="btns" class="btn btn-outline">Comprar</button>
+                                    <button type="button" id="btns" class="btn btn-outline">Añadir al carrito</button>
                                 </div>
                             </div>
                         </div>

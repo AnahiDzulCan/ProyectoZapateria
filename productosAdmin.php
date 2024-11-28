@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+// Verifica si el usuario está autenticado
+if (!isset($_SESSION['idUsuario'])) {
+  header("Location: InicioSesion.html"); // Redirige si no está autenticado
+  exit();
+}
+
 include_once 'php/Database.php'; // Incluye la clase para la base de datos
 include_once 'php/Producto.php';  // Incluye la clase Producto
 
@@ -9,8 +18,19 @@ $db = $database->getConexionDB();
 // Crear el objeto de la clase Producto
 $producto = new Producto($db);
 
-// Obtener los productos
-$productos = $producto->obtenerProductos();
+// Obtener los filtros desde la URL
+$filtroGenero = isset($_GET['filtroGenero']) ? (int) $_GET['filtroGenero'] : null;
+$filtroTalla = isset($_GET['filtroTalla']) ? (int) $_GET['filtroTalla'] : null;
+$filtroCategoria = isset($_GET['filtroCategoria']) ? (int) $_GET['filtroCategoria'] : null;
+
+// Verificar si hay filtros en la URL
+if ($filtroGenero || $filtroTalla || $filtroCategoria) {
+  // Si hay filtros, obtener los productos filtrados
+  $productos = $producto->obtenerProductosFiltrados($filtroGenero, $filtroTalla, $filtroCategoria);
+} else {
+  // Si no hay filtros, obtener todos los productos
+  $productos = $producto->obtenerProductos();
+}
 
 ?>
 
@@ -70,21 +90,25 @@ $productos = $producto->obtenerProductos();
         <div class="px-3 py-2 border-bottom mb-3">
             <div class="container d-flex flex-wrap justify-content-lg-end">
             <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="registroProducto.html">Crear Producto</a></button>
+            <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="php/VerRegistros.php">Ver Registros Usuarios</a></button>
                 <div class="text-end">
                     <div class="dropdown" data-bs-theme="light">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
                           Filtrar
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
-                          <li><a class="dropdown-item active" href="#">Dama</a></li>
-                          <li><a class="dropdown-item" href="#">Caballero</a></li>
-                          <li><a class="dropdown-item" href="#">Niña</a></li>
-                          <li><a class="dropdown-item" href="#">Niño</a></li>
+                        <li><a class="dropdown-item" href="?filtroGenero=2">Dama</a></li>
+                        <li><a class="dropdown-item" href="?filtroGenero=1">Caballero</a></li>
+                        <li><a class="dropdown-item" href="?filtroCategoria=3">Sandalia</a></li>
+                        <li><a class="dropdown-item" href="?filtroCategoria=2">Tacon</a></li>
+                        <li><a class="dropdown-item" href="?filtroCategoria=1">Tenis</a></li>
+                        <li><a class="dropdown-item" href="?filtroCategoria=4">Chancla</a></li>
                           <li><hr class="dropdown-divider"></li>
-                          <li>
-                            <form class="p-2 mb-2 bg-body-tertiary border-bottom">
-                            <input type="search" class="form-control" autocomplete="false" placeholder="Talla">
-                            </form>
+                        <li>
+                        <form class="p-2 mb-2 bg-body-tertiary border-bottom" method="GET">
+                            <input type="number" name="filtroTalla" class="form-control" placeholder="Talla" min="1" max="50">
+                            <button type="submit" class="btn btn-primary mt-2">Filtrar por talla</button>
+                        </form>
                         </li>
                         </ul>
                       </div>

@@ -1,4 +1,13 @@
 <?php
+
+session_start();
+
+// Verifica si el usuario está autenticado
+if (!isset($_SESSION['idUsuario'])) {
+  header("Location: InicioSesion.html"); // Redirige si no está autenticado
+  exit();
+}
+
 if (isset($_POST['idProducto'])) {
     $idProducto = $_POST['idProducto'];
 }

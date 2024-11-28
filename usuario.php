@@ -1,6 +1,12 @@
 <?php
 session_start(); // Asegúrate de que la sesión esté iniciada
 
+// Verifica si el usuario está autenticado
+if (!isset($_SESSION['idUsuario'])) {
+  header("Location: InicioSesion.html"); // Redirige si no está autenticado
+  exit();
+}
+
 // Incluye la clase Database
 include_once 'php/Database.php';
 

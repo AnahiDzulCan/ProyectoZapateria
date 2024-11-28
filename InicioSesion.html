@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- enlazado con el style -->
-     <link rel="stylesheet" href="/assets/styles.css">
+     <link rel="stylesheet" href="assets/styles.css">
          <!-- CDN Iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- fonts -->
@@ -25,10 +25,10 @@
     <div class="container1">
       <div class="containerlogo d-flex justify-content-between align-items-center p-3">
         <!-- Logo -->
-        <div class="d-flex align-items-center text-white text-decoration-none">
-          <img class="logo" src="/assets/logo.png" alt="logo">
+        <a href="index.html" class="d-flex align-items-center text-white text-decoration-none">
+          <img class="logo" src="assets/logo.png" alt="logo">
           <h5 class="m-3 ">Zapatería "María Jose"</h5>
-        </div>
+        </a>
         <!-- Menú -->
         <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 p-3 text-small">
           <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-house-fill"></i>Home</a> </li>
@@ -49,8 +49,8 @@
   <div class="px-3 py-2 border-bottom mb-3">
     <div class="container d-flex flex-wrap justify-content-lg-start">
       <div class="text-end">
-        <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="/registrarse.html">Registrate</a></button>
-        <button type="button" class="btn btn-light text-dark"  id="btns"><a href="/InicioSesion.html">Iniciar Sesión</a></button>
+        <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="registrarse.html">Registrate</a></button>
+        <button type="button" class="btn btn-light text-dark"  id="btns"><a href="InicioSesion.html">Iniciar Sesión</a></button>
       </div>
     </div>
   </div> 
@@ -59,19 +59,17 @@
 
 <main>
 
-
-  <button id="btns" class="btn m-3" onclick="window.location.href='home.html'">Regresar</button>
-
   <div class="d-flex justify-content-center align-items-center">
-    <form name="login" id="login" action="proceso.php" method="post" class="p-4 rounded shadow bg-light">
+    <form name="login" id="login" action="php/UsuarioController.php" method="post" class="p-4 rounded shadow bg-light">
+      <input type="hidden" name="accion" value="ingresar">
       <h1 class="h3 mb-3 fw-normal text-center">Iniciar sesión</h1>
 
       <div class="form-floating mb-3">
         <input 
           type="email" 
-          name="correo" 
+          name="email" 
           class="form-control" 
-          id="floatingInput" 
+          id="email" 
           placeholder="name@example.com" 
           required>
         <label for="floatingInput">Correo</label>
@@ -82,7 +80,7 @@
           type="password" 
           class="form-control"  
           name="password" 
-          id="floatingPassword" 
+          id="password" 
           placeholder="Password" 
           required>
         <label for="floatingPassword">Contraseña</label>
@@ -120,6 +118,6 @@
     <!-- CDN JS, TEXTO MOVIMIENTO -->
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <!-- main js -->
-     <script src="/assets/Js.js"></script>
+     <script src="assets/Js.js"></script>
 </body>
 </html>

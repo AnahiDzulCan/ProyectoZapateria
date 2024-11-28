@@ -47,27 +47,17 @@
       </div>
     </div>
  <!-- termina el menu home -->
-
-    <!-- para inicio o registro -->
-    <div class="px-3 py-2 border-bottom mb-3">
-      <div class="container d-flex flex-wrap justify-content-lg-start">
-        <div class="text-end">
-          <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="registrarse.html">Registrate</a></button>
-          <button type="button" class="btn btn-light text-dark"  id="btns"><a href="InicioSesion.html">Iniciar Sesión</a></button>
-        </div>
-      </div>
-    </div> 
     
   </header>
 
   <main>
 
-    <div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="d-flex justify-content-center align-items-center p-4">
       <div class="card" id="Form-registro">
         <div class="card-body p-4 rounded shadow bg-light">
-          <h5 class="card-header text-center">Registro de Cuenta</h5>
+          <h5 class="card-header text-center">Modificar Datos</h5>
           <form method="POST" action="php/UsuarioController.php">
-            <input type="hidden" name="accion" value="registrar">
+            <input type="hidden" name="accion" value="editar">
 
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" class="form-control" required><br>
@@ -75,14 +65,8 @@
             <label for="apellido">Apellido:</label>
             <input type="text" id="apellido" name="apellido" class="form-control" required><br>
 
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" class="form-control" required><br>
-
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" class="form-control" required><br>
-
-            <label for="repassword">Confirme su Contraseña:</label>
-            <input type="password" id="repassword" name="repassword" class="form-control" required><br>
                           <!-- Género usando Radio Buttons -->
             <div>
               <label>Género:</label><br>
@@ -100,13 +84,7 @@
               </div>
             <div>
 
-              <!-- Checkbox para Aceptar Términos -->
-              <div class="form-check form-check-reverse p-4">
-                <input class="form-check-input" type="checkbox" id="terminos" name="terminos" required>
-                <label class="form-check-label" for="reverseCheck1">
-                  Acepto los términos y condiciones</label>
-              </div>
-            <input id="btns" class="btn" type="submit" value="Registrarse">
+            <input id="btns" class="btn" type="submit" value="Actualizar">
 
           </form>
 

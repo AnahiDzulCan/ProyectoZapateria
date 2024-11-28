@@ -1,3 +1,9 @@
+<?php
+if (isset($_POST['idProducto'])) {
+    $idProducto = $_POST['idProducto'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,37 +26,38 @@
 <body>
     <!-- menuHome -->
     <header>
-      <div class="px-3 py-2 border-bottom" id="header-menu">
-        <div class="container1">
-          <div class="containerlogo d-flex justify-content-between align-items-center p-3">
-            <!-- Logo -->
-            <a href="home.html" class="d-flex align-items-center text-white text-decoration-none">
-              <img class="logo" src="assets/logo.png" alt="logo">
-              <div class="ms-3">
-                <h5 class="m-3">Zapatería "María Jose"</h5>
-              </div>
-            </a>
-            <!-- Menú -->
-            <ul class="nav">
-              <li><a href="home.html" class="nav-link text-white"><i class="bi bi-house-fill"></i> Home</a></li>
-              <li><a href="productos.php" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
-              <li><a href="carrito.html" class="nav-link text-white"><i class="bi bi-cart-fill"></i> Carrito</a></li>
-              <li><a href="usuario.php" class="nav-link text-white"><i class="bi bi-person-heart"></i> Perfil</a></li>
-            </ul>
+        <div class="px-3 py-2 border-bottom" id="header-menu">
+          <div class="container1">
+            <div class="containerlogo d-flex justify-content-between align-items-center p-3">
+              <!-- Logo -->
+              <a href="home.html" class="d-flex align-items-center text-white text-decoration-none">
+                <img class="logo" src="assets/logo.png" alt="logo">
+                <div class="ms-3">
+                  <h5 class="m-3">Zapatería "María Jose"</h5>
+                </div>
+              </a>
+              <!-- Menú -->
+              <ul class="nav">
+                <li><a href="home.html" class="nav-link text-white"><i class="bi bi-house-fill"></i> Home</a></li>
+                <li><a href="productos.php" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
+                <li><a href="carrito.html" class="nav-link text-white"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+                <li><a href="usuario.php" class="nav-link text-white"><i class="bi bi-person-heart"></i> Perfil</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-   <!-- termina el menu home -->
-    </header>
+     <!-- termina el menu home -->
+      </header>
 
-  <main>
+      <main>
 
         <div class="d-flex justify-content-center align-items-center p-4">
           <div class="card" id="Form-registro">
               <div class="card-body p-4 rounded shadow bg-light">
-                  <h5 class="card-header text-center">Registro de producto</h5>
+                  <h5 class="card-header text-center">Editar producto</h5>
                   <form method="POST" action="php/ProductoController.php">
 
-                    <input type="hidden" name="accion" value="crear">
+                    <input type="hidden" name="accion" value="editar">
+                    <input type="hidden" name="idProducto" value="<?php echo $idProducto;?>">
             
                     <label for="idCategoria">idCategoria:</label>
                     <input type="number" id="idCategoria" name="idCategoria" class="form-control m-3"  min="1" required>
@@ -66,22 +73,22 @@
                         <label class="form-check-label" for="inlineRadio2">Femenino</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="idgenero"  id="unisex"  value="3" checked>
+                        <input class="form-check-input" type="radio" name="idgenero" id="unisex"  value="3" checked>
                         <label class="form-check-label" for="inlineRadio3">Unisex</label>
                       </div>
                     <div>
 
                     <label for="Nombre">Nombre:</label>
                     <input type="text" id="Nombre" name="Nombre" class="form-control" required>
-
-                    <label for="Nombre">Modelo:</label>
-                    <input type="text" id="Modelo" name="Modelo" class="form-control"  required>
             
                     <label for="Descripcion">Descripción:</label>
                     <input type="text" id="Descripcion" name="Descripcion" class="form-control"  required>
             
                     <label for="Talla">Talla:</label>
                     <input type="number" id="Talla" name="Talla" class="form-control"  min="1" max="50" required>
+
+                    <label for="Nombre">Modelo:</label>
+                    <input type="text" id="Modelo" name="Modelo" class="form-control"  required>
             
                     <label for="Precio">Precio:</label>
                     <input type="number" id="Precio" name="Precio"  class="form-control"  min="1" required>
@@ -89,7 +96,7 @@
                     <label for="Stock">Stock:</label>
                     <input type="number" id="Stock" name="Stock" class="form-control"  min="1" required>
        
-                    <button id="btns" class="btn m-3 d-flex " type="submit" value="crear">Crear</button>
+                    <button id="btns" class="btn m-3 d-flex " type="submit" value="crear">Actualizar</button>
 
                 </form>
             
@@ -144,6 +151,6 @@
     <!-- CDN JS, TEXTO MOVIMIENTO -->
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <!-- main js -->
-     <script src="/assets/Js.js"></script>
+     <script src="assets/Js.js"></script>
 </body>
 </html>

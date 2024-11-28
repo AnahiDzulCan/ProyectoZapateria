@@ -3,6 +3,28 @@ body{
 }
 
 #header-menu {
+    background-color:  #b0b6d2e1; 
+}
+
+#ContCarrusel-foto{
+    height: 600px;
+}
+
+#footer{
+    background-color:  #b0b6d2e1; 
+}
+
+#btns{
+    background-color:  #b0b6d2e1; 
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#header-menu {
     background-color:#b0b6d2e1;
 }
 .containerlogo {
@@ -31,23 +53,6 @@ body{
     color: #809671; /* Cambia el color al pasar el mouse */
   }
 
-#ContCarrusel-foto{
-    height: 600px;
-}
-
-#footer{
-    height: 10rem;
-    background-color:  #b0b6d2e1; 
-}
-
-#btns{
-    background-color:  #b0b6d2e1; 
-}
-
-a{
-    text-decoration: none;
-    color: black;
-}
 
 @media (min-width: 1025px) {
     .h-custom {

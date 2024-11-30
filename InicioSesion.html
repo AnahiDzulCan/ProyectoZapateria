@@ -9,7 +9,8 @@
     <!-- enlazado con el style -->
      <link rel="stylesheet" href="assets/styles.css">
          <!-- CDN Iconos -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,48 +19,48 @@
     <title>Iniciar sesión</title>
 </head>
 <body>
-    <!-- menuHome -->
-<!-- menuHome -->
-<header>
-  <div class="px-3 py-2 border-bottom" id="header-menu">
-    <div class="container1">
-      <div class="containerlogo d-flex justify-content-between align-items-center p-3">
-        <!-- Logo -->
-        <a href="index.html" class="d-flex align-items-center text-white text-decoration-none">
-          <img class="logo" src="assets/logo.png" alt="logo">
-          <h5 class="m-3 ">Zapatería "María Jose"</h5>
-        </a>
-        <!-- Menú -->
-        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 p-3 text-small">
-          <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-house-fill"></i>Home</a> </li>
-
-          <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a> </li>
-
-          <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-cart-fill"></i> Carrito</a></li>
-
-          <li><a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-person-heart">Perfil</i></a>   <!-- Crear acordion para desplegar el cerra sesión, modificar datos -->
-
-        </ul>
+  <!-- menuHome -->
+<header class="main-header">
+    <div class="px-3 py-2 border-bottom" id="Contenedor1">
+      <nav class="navbar header-nav navbar-expand-lg" id="navbar-header">
+               <!-- Logo  -->
+        <div class="containerlogo d-flex justify-content-between align-items-center p-3">
+          <a href="#" class="navbar-brand">
+            <img class="logo" src="assets/logo.png" alt="logo"> <h5 class=" m-0 text-white ">Zapatería "María Jose"</h5>
+          </a>
+        </div>
+  <!-- botón Menú(para móviles) -->
+        <button class="navbar-toggler collapsed p-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      <!-- menú -->
+         <div class="collapse navbar-collapse justify-content-end " id="navbar-collapse-toggle">
+          <ul class="navbar-nav ">
+            <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-house-fill"></i> Home</a></li>
+            <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
+            <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+            <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-person-heart"></i> Perfil</a></li>
+          </ul>
+       </div>      
+        </nav>
+    </div> 
+    <!-- para inicio o registro -->
+    <div class="px-3 py-2 border-bottom mb-3">
+      <div class="container d-flex flex-wrap justify-content-lg-start">
+        <div class="text-end">
+          <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="registrarse.html">Registrate</a></button>
+          <button type="button" class="btn btn-light text-dark"  id="btns"><a href="InicioSesion.html">Iniciar Sesión</a></button>
+        </div>
       </div>
-    </div>
-  </div>
-<!-- termina el menu home -->
-
-  <!-- para inicio o registro -->
-  <div class="px-3 py-2 border-bottom mb-3">
-    <div class="container d-flex flex-wrap justify-content-lg-start">
-      <div class="text-end">
-        <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="registrarse.html">Registrate</a></button>
-        <button type="button" class="btn btn-light text-dark"  id="btns"><a href="InicioSesion.html">Iniciar Sesión</a></button>
-      </div>
-    </div>
-  </div> 
-  
+    </div> 
+        
 </header>
+  <!-- Alerta flotante -->
+  <div id="miToast" class="toast">¡Necesitas estar suscrito o inicar sesión!</div>
 
-<main>
-
-  <div class="d-flex justify-content-center align-items-center">
+  <div class="d-flex justify-content-center align-items-center m-5">
     <form name="login" id="login" action="php/UsuarioController.php" method="post" class="p-4 rounded shadow bg-light">
       <input type="hidden" name="accion" value="ingresar">
       <h1 class="h3 mb-3 fw-normal text-center">Iniciar sesión</h1>
@@ -86,28 +87,39 @@
         <label for="floatingPassword">Contraseña</label>
       </div>
 
-      <button id="btns" class="btn w-100 py-3 my-3" type="submit">Iniciar sesión</button>
+      <button id="btns" class="btn w-100 py-3 my-3 text-white" type="submit">Iniciar sesión</button>
       <p class="mt-5 mb-3 text-body-secondary text-center">© Zapatería María José</p>
     </form>
   </div>
 </main>
 
-<!-- Footer -->
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© Zapatería "María José"</span>
+  <!-- Footer -->
+  <footer class="py-5" >
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Tu opinión nos importa, ¡déjanos un comentario!</h5>
+          <p>Queremos conocer las opiniones de los demás antes de decidirnos, porque esto nos da confianza en nuestra elección..</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Comenta</label>
+            <input id="newsletter1" type="text" class="form-control">
+            <button class="btn btn-light text-white"  id="btns" type="button">Enviar</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <ul class="nav col-md-4 justify-content list-unstyled d-flex">
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-twitter fs-3"></i></a></li>
-    </ul>
-</footer>
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top p-5">
+      <p>©Zapatería "María Jose"</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter fs-3"></i></a></li>
+      </ul>
+    </div>
+  </footer>
 
 
       <!-- script = funcionalidad para los elementos -->

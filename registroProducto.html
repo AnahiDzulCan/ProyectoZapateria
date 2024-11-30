@@ -18,29 +18,37 @@
     <title>RegistroProducto</title>
 </head>
 <body>
-    <!-- menuHome -->
-    <header>
-      <div class="px-3 py-2 border-bottom" id="header-menu">
-        <div class="container1">
-          <div class="containerlogo d-flex justify-content-between align-items-center p-3">
-            <!-- Logo -->
-            <a href="home.html" class="d-flex align-items-center text-white text-decoration-none">
-              <img class="logo" src="assets/logo.png" alt="logo">
-              <div class="ms-3">
-                <h5 class="m-3">Zapatería "María Jose"</h5>
-              </div>
-            </a>
-            <!-- Menú -->
-            <ul class="nav">
-              <li><a href="home.html" class="nav-link text-white"><i class="bi bi-house-fill"></i> Home</a></li>
-              <li><a href="productos.php" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
-              <li><a href="carrito.html" class="nav-link text-white"><i class="bi bi-cart-fill"></i> Carrito</a></li>
-              <li><a href="usuario.php" class="nav-link text-white"><i class="bi bi-person-heart"></i> Perfil</a></li>
-            </ul>
-          </div>
-        </div>
-   <!-- termina el menu home -->
-    </header>
+<!-- inicio Header -->
+<header class="main-header">
+  <div class="px-3 py-2 border-bottom" id="Contenedor1">
+    <nav class="navbar header-nav navbar-expand-lg" id="navbar-header">
+                <!-- Logo  -->
+      <div class="containerlogo d-flex justify-content-between align-items-center p-3">
+         <a href="home.html" class="navbar-brand">
+            <img class="logo" src="assets/logo.png" alt="logo"> <h5 class=" m-0 text-white ">Zapatería "María Jose"</h5>
+          </a>
+      </div>
+     
+         <!-- botón Menú(para móviles) -->
+     <button class="navbar-toggler collapsed p-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-toggle">
+         <span></span>
+         <span></span>
+         <span></span>
+     </button>
+     
+          <!-- menú -->
+     <div class="collapse navbar-collapse justify-content-end " id="navbar-collapse-toggle">
+         <ul class="navbar-nav ">
+               <li><a href="home.html" class="nav-link fs-6"><i class="bi bi-house-fill"></i> Home</a></li>
+               <li><a href="productos.php" class="nav-link fs-6"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
+               <li><a href="carrito.html" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+               <li><a href="usuario.php" class="nav-link fs-6"><i class="bi bi-person-heart"></i> Perfil</a></li>
+         </ul>
+     </div>      
+    </nav>
+ </div>            
+</header>
+<!-- Fin Headaer -->
 
   <main>
 

@@ -65,30 +65,37 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
 </head>
 
 <body>
-
-    <!-- menuHome -->
-    <header>
-        <div class="px-3 py-2 border-bottom" id="header-menu">
-          <div class="container1">
-            <div class="containerlogo d-flex justify-content-between align-items-center p-3">
-              <!-- Logo -->
-              <a href="home.html" class="d-flex align-items-center text-white text-decoration-none">
-                <img class="logo" src="assets/logo.png" alt="logo">
-                <div class="ms-3">
-                  <h5 class="m-3">Zapatería "María Jose"</h5>
-                </div>
-              </a>
-              <!-- Menú -->
-              <ul class="nav">
-                <li><a href="home.html" class="nav-link text-white"><i class="bi bi-house-fill"></i> Home</a></li>
-                <li><a href="productos.php" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
-                <li><a href="carrito.html" class="nav-link text-white"><i class="bi bi-cart-fill"></i> Carrito</a></li>
-                <li><a href="usuario.php" class="nav-link text-white"><i class="bi bi-person-heart"></i> Perfil</a></li>
-              </ul>
-            </div>
-          </div>
-     <!-- termina el menu home -->
-      </header>
+<!-- inicio Header -->
+<header class="main-header">
+     <div class="px-3 py-2 border-bottom" id="Contenedor1">
+       <nav class="navbar header-nav navbar-expand-lg" id="navbar-header">
+                   <!-- Logo  -->
+         <div class="containerlogo d-flex justify-content-between align-items-center p-3">
+            <a href="home.html" class="navbar-brand">
+               <img class="logo" src="assets/logo.png" alt="logo"> <h5 class=" m-0 text-white ">Zapatería "María Jose"</h5>
+             </a>
+         </div>
+        
+            <!-- botón Menú(para móviles) -->
+        <button class="navbar-toggler collapsed p-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+             <!-- menú -->
+        <div class="collapse navbar-collapse justify-content-end " id="navbar-collapse-toggle">
+            <ul class="navbar-nav ">
+                  <li><a href="home.html" class="nav-link fs-6"><i class="bi bi-house-fill"></i> Home</a></li>
+                  <li><a href="productos.php" class="nav-link fs-6"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
+                  <li><a href="carrito.html" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+                  <li><a href="usuario.php" class="nav-link fs-6"><i class="bi bi-person-heart"></i> Perfil</a></li>
+            </ul>
+        </div>      
+       </nav>
+    </div>            
+ </header>
+<!-- Fin Headaer -->
 
 
     <main>
@@ -127,7 +134,7 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
         <li>
             <form class="p-2 mb-2 bg-body-tertiary border-bottom" method="GET">
                 <input type="number" name="filtroTalla" class="form-control" placeholder="Talla" min="1" max="50">
-                <button type="submit" class="btn btn-primary mt-2">Filtrar por talla</button>
+                <button type="submit" class="btn btn-light text-white"  id="btns">Filtrar por talla</button>
             </form>
         </li>
     </ul>
@@ -161,7 +168,7 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
                                 </ul>
                                 <p class="card-text"><?php echo htmlspecialchars($producto_row['Descripcion']); ?></p>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="button" id="btns" class="btn btn-outline">Añadir al carrito</button>
+                                    <button type="button" id="btns" class="btn btn-light text-white">Añadir al carrito</button>
                                 </div>
                             </div>
                         </div>
@@ -182,24 +189,43 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
     </main>
 
 
-
-
   <!-- Footer -->
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© Zapatería "María José"</span>
-    </div>
+  <footer class="py-5" >
+      <div class="row d-flex justify-content-center">
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-twitter fs-3"></i></a></li>
-    </ul>
-</footer>
+        <div class="col-6 col-md-2 mb-3 m-4 ">
+          <h5 class="d-flex justify-content" >Para ti</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#descuentos" class="nav-link p-0 text-body-secondary">Descuentos</a></li>
+            <li class="nav-item mb-2"><a href="#Ver-rapido" class="nav-link p-0 text-body-secondary">Ver rapido</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">De temporada</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Cupones</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5>Tu opinión nos importa, ¡déjanos un comentario!</h5>
+            <p>Queremos conocer las opiniones de los demás antes de decidirnos, porque esto nos da confianza en nuestra elección..</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Comenta</label>
+              <input id="newsletter1" type="text" class="form-control">
+              <button class="btn btn-light text-white"  id="btns" type="button">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top p-5">
+        <p>©Zapatería "María Jose"</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter fs-3"></i></a></li>
+        </ul>
+      </div>
+    </footer>
 
     <!-- script = funcionalidad para los elementos -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

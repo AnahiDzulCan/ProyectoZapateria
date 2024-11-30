@@ -11,7 +11,7 @@ typewriter.typeString('La mejor zapateria')
     .typeString('María Jose')
     .pauseFor(2500)
     .deleteAll()
-    .typeString('<strong>A la talla de tu éxito...</strong>')
+    .typeString('A la talla de tu éxito...')
     .pauseFor(2500)
     .start();
 
@@ -22,23 +22,24 @@ typewriter.typeString('La mejor zapateria')
     toast.classList.add('show'); // Añade la clase "show" para mostrarla
     setTimeout(() => {
       toast.classList.remove('show'); // La oculta después de 3 segundos
-    }, 3000);
+    }, 5000);
   }
 
-// Función para iniciar sesión de inicioasesion
+
+// Función para iniciar sesión de iniciarsesion
  // Función para verificar que las contraseñas coincidan
  function verificarContraseñas() {
             // Obtener los valores de los campos de contraseña y confirmación
-     var password = document.getElementById("password").value;
-     var repassword = document.getElementById("repassword").value;
+    var password = document.getElementById("password").value;
+    var repassword = document.getElementById("repassword").value;
     
             // Verificar si las contraseñas coinciden
-      if (password !== repassword) {
+    if (password !== repassword) {
          alert("Las contraseñas no coinciden. Por favor, intente de nuevo.");
           return false; // Impide el envío del formulario
           }
     
-        return true; // Permite el envío del formulario
+  return true; // Permite el envío del formulario
   }
     
   // Asociar la función al evento de envío del formulario

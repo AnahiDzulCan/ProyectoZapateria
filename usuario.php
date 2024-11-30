@@ -79,29 +79,37 @@ if ($stmt = $conn->prepare($query)) {
     <title>Perfil</title>
 </head>
 <body>
-    <!-- menuHome -->
-    <header>
-      <div class="px-3 py-2 border-bottom" id="header-menu">
-        <div class="container1">
-          <div class="containerlogo d-flex justify-content-between align-items-center p-3">
-            <!-- Logo -->
-            <a href="home.html" class="d-flex align-items-center text-white text-decoration-none">
-              <img class="logo" src="assets/logo.png" alt="logo">
-              <div class="ms-3">
-                <h5 class="m-3">Zapatería "María Jose"</h5>
-              </div>
-            </a>
-            <!-- Menú -->
-            <ul class="nav">
-              <li><a href="home.html" class="nav-link text-white"><i class="bi bi-house-fill"></i> Home</a></li>
-              <li><a href="productos.php" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
-              <li><a href="carrito.html" class="nav-link text-white"><i class="bi bi-cart-fill"></i> Carrito</a></li>
-              <li><a href="usuario.php" class="nav-link text-white"><i class="bi bi-person-heart"></i> Perfil</a></li>
-            </ul>
-          </div>
-        </div>
-   <!-- termina el menu home -->
-    </header>
+<!-- inicio Header -->
+<header class="main-header">
+  <div class="px-3 py-2 border-bottom" id="Contenedor1">
+    <nav class="navbar header-nav navbar-expand-lg" id="navbar-header">
+                <!-- Logo  -->
+      <div class="containerlogo d-flex justify-content-between align-items-center p-3">
+         <a href="home.html" class="navbar-brand">
+            <img class="logo" src="assets/logo.png" alt="logo"> <h5 class=" m-0 text-white ">Zapatería "María Jose"</h5>
+          </a>
+      </div>
+     
+         <!-- botón Menú(para móviles) -->
+     <button class="navbar-toggler collapsed p-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-toggle">
+         <span></span>
+         <span></span>
+         <span></span>
+     </button>
+     
+          <!-- menú -->
+     <div class="collapse navbar-collapse justify-content-end " id="navbar-collapse-toggle">
+         <ul class="navbar-nav ">
+               <li><a href="home.html" class="nav-link fs-6"><i class="bi bi-house-fill"></i> Home</a></li>
+               <li><a href="productos.php" class="nav-link fs-6"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
+               <li><a href="carrito.html" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+               <li><a href="usuario.php" class="nav-link fs-6"><i class="bi bi-person-heart"></i> Perfil</a></li>
+         </ul>
+     </div>      
+    </nav>
+ </div>            
+</header>
+<!-- Fin Headaer -->
 
       <main>
           
@@ -109,18 +117,17 @@ if ($stmt = $conn->prepare($query)) {
                 <div class="col-lg-4">
                   <div class="card mb-4">
                     <div class="card-body text-center">
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-                        class="rounded-circle img-fluid" style="width: 150px;">
+                    <i class="bi bi-person-circle fs-2"></i>
                       <h5 class="my-3"> <?php echo htmlspecialchars($nombre . ' ' . $apellido); ?> </h5>
                       <p class="text-muted mb-1"> <?php echo htmlspecialchars($email); ?> </p>
                       <p class="text-muted mb-4"> <?php echo htmlspecialchars($genero); ?> </p>
                       <div class="d-flex justify-content-center mb-2">
                         <form method="get" action="modificarUsuario.html">
-                          <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary">Modificar datos</button>
+                          <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-light text-white"  id="btns">Modificar datos</button>
                         </form>
                         <form method="POST" action="php/UsuarioController.php">
                           <input type="hidden" name="accion" value="cerrarSesion">
-                          <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary ms-1">Cerrar sesión</button>
+                          <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-light text-white"  id="btns">Cerrar sesión</button>
                         </form>
                       </div>
                     </div>
@@ -131,22 +138,44 @@ if ($stmt = $conn->prepare($query)) {
       </main>
 
 
- <!-- Footer -->
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© Zapatería "María José"</span>
-    </div>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-twitter fs-3"></i></a></li>
-    </ul>
- </footer>
+  <!-- Footer -->
+  <footer class="py-5" >
+      <div class="row d-flex justify-content-center">
+
+        <div class="col-6 col-md-2 mb-3 m-4 ">
+          <h5 class="d-flex justify-content" >Para ti</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#descuentos" class="nav-link p-0 text-body-secondary">Descuentos</a></li>
+            <li class="nav-item mb-2"><a href="#Ver-rapido" class="nav-link p-0 text-body-secondary">Ver rapido</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">De temporada</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Cupones</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5>Tu opinión nos importa, ¡déjanos un comentario!</h5>
+            <p>Queremos conocer las opiniones de los demás antes de decidirnos, porque esto nos da confianza en nuestra elección..</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Comenta</label>
+              <input id="newsletter1" type="text" class="form-control">
+              <button class="btn btn-light text-white"  id="btns" type="button">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top p-5">
+        <p>©Zapatería "María Jose"</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter fs-3"></i></a></li>
+        </ul>
+      </div>
+    </footer>
  
       <!-- script = funcionalidad para los elementos -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

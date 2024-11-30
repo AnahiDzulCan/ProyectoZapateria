@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/styles.css">
   <!-- CDN Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,31 +24,32 @@
 
 <body>
   <!-- menuHome -->
-  <header>
-    <div class="px-3 py-2 border-bottom" id="header-menu">
-      <div class="container1">
+  <header class="main-header">
+    <div class="px-3 py-2 border-bottom" id="Contenedor1">
+      <nav class="navbar header-nav navbar-expand-lg" id="navbar-header">
+               <!-- Logo  -->
         <div class="containerlogo d-flex justify-content-between align-items-center p-3">
-          <!-- Logo -->
-          <a href="index.html" class="d-flex align-items-center text-white text-decoration-none">
-            <img class="logo" src="assets/logo.png" alt="logo">
-            <h5 class="m-3 ">Zapatería "María Jose"</h5>
+          <a href="#" class="navbar-brand">
+            <img class="logo" src="assets/logo.png" alt="logo"> <h5 class=" m-0 text-white ">Zapatería "María Jose"</h5>
           </a>
-          <!-- Menú -->
-          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 p-3 text-small">
-            <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-house-fill"></i>Home</a> </li>
-  
-            <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a> </li>
-  
-            <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-cart-fill"></i> Carrito</a></li>
-  
-            <li><a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-person-heart">Perfil</i></a>   <!-- Crear acordion para desplegar el cerra sesión, modificar datos -->
-  
-          </ul>
         </div>
-      </div>
-    </div>
- <!-- termina el menu home -->
-
+  <!-- botón Menú(para móviles) -->
+        <button class="navbar-toggler collapsed p-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      <!-- menú -->
+         <div class="collapse navbar-collapse justify-content-end " id="navbar-collapse-toggle">
+          <ul class="navbar-nav ">
+            <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-house-fill"></i> Home</a></li>
+            <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
+            <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+            <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-person-heart"></i> Perfil</a></li>
+          </ul>
+       </div>      
+        </nav>
+    </div> 
     <!-- para inicio o registro -->
     <div class="px-3 py-2 border-bottom mb-3">
       <div class="container d-flex flex-wrap justify-content-lg-start">
@@ -57,10 +59,12 @@
         </div>
       </div>
     </div> 
-    
-  </header>
+        
+</header>
 
   <main>
+    <!-- Alerta flotante -->
+    <div id="miToast" class="toast">¡Necesitas estar suscrito o inicar sesión!</div>
 
     <div class="d-flex justify-content-center align-items-center vh-100">
       <div class="card" id="Form-registro">
@@ -106,7 +110,7 @@
                 <label class="form-check-label" for="reverseCheck1">
                   Acepto los términos y condiciones</label>
               </div>
-            <input id="btns" class="btn" type="submit" value="Registrarse">
+            <input id="btns" class="btn text-white" type="submit" value="Registrarse">
 
           </form>
 
@@ -116,23 +120,32 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24">
-          <use xlink:href="#bootstrap"></use>
-        </svg>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© Zapatería "María José"</span>
+   <!-- Footer -->
+   <footer class="py-5 " >
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Tu opinión nos importa, ¡déjanos un comentario!</h5>
+          <p>Queremos conocer las opiniones de los demás antes de decidirnos, porque esto nos da confianza en nuestra elección..</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Comenta</label>
+            <input id="newsletter1" type="text" class="form-control">
+            <button class="btn btn-light text-white"  id="btns" type="button">Enviar</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-twitter fs-3"></i></a></li>
-    </ul>
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top p-5">
+      <p>©Zapatería "María Jose"</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter fs-3"></i></a></li>
+      </ul>
+    </div>
   </footer>
 
   <script>
@@ -155,15 +168,17 @@
     document.querySelector("form").onsubmit = verificarContraseñas;
   </script>
 
-  <!-- script = funcionalidad para los elementos -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
 
-  <!-- CDN JS, TEXTO MOVIMIENTO -->
-  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-  <!-- main js -->
-  <script src="assets/Js.js"></script>
+      <!-- script = funcionalidad para los elementos -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+      
+          <!-- CDN JS, TEXTO MOVIMIENTO -->
+      <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+      <!-- main js -->
+      <script src="assets/Js.js"></script>
+
 </body>
 
 </html>

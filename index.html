@@ -9,41 +9,44 @@
     <!-- enlazado con el style -->
      <link rel="stylesheet" href="assets/styles.css">
          <!-- CDN Iconos -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <title>Inicio</title>
+    <title>index</title>
 </head>
 <body>
-    <!-- menuHome -->
-    <header>
-        <div class="px-3 py-2 border-bottom" id="header-menu">
-          <div class="container1">
-            <div class="containerlogo d-flex justify-content-between align-items-center p-3">
-              <!-- Logo -->
-              <div class="d-flex align-items-center text-white text-decoration-none">
-                <img class="logo" src="assets/logo.png" alt="logo">
-                <h5 class="m-3 ">Zapatería "María Jose"</h5>
-              </div>
-              <!-- Menú -->
-              <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 p-3 text-small">
-                <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-house-fill"></i>Home</a> </li>
-      
-                <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-bag-heart-fill"></i> Productos</a> </li>
-      
-                <li> <a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-cart-fill"></i> Carrito</a></li>
-      
-                <li><a  onclick="mostrarToast()"  href="#" class="nav-link text-white"><i class="bi bi-person-heart">Perfil</i></a>   <!-- Crear acordion para desplegar el cerra sesión, modificar datos -->
-      
-              </ul>
-            </div>
-          </div>
-        </div>
-     <!-- termina el menu home -->
 
+  <!-- menuHome -->
+  <header class="main-header">
+        <div class="px-3 py-2 border-bottom" id="Contenedor1">
+          <nav class="navbar header-nav navbar-expand-lg" id="navbar-header">
+                   <!-- Logo  -->
+            <div class="containerlogo d-flex justify-content-between align-items-center p-3">
+              <a href="#" class="navbar-brand">
+                <img class="logo" src="assets/logo.png" alt="logo"> <h5 class=" m-0 text-white ">Zapatería "María Jose"</h5>
+              </a>
+            </div>
+      <!-- botón Menú(para móviles) -->
+            <button class="navbar-toggler collapsed p-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          <!-- menú -->
+             <div class="collapse navbar-collapse justify-content-end " id="navbar-collapse-toggle">
+              <ul class="navbar-nav ">
+                <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-house-fill"></i> Home</a></li>
+                <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
+                <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+                <li><a onclick="mostrarToast()" href="#" class="nav-link fs-6"><i class="bi bi-person-heart"></i> Perfil</a></li>
+              </ul>
+           </div>      
+            </nav>
+        </div> 
         <!-- para inicio o registro -->
         <div class="px-3 py-2 border-bottom mb-3">
           <div class="container d-flex flex-wrap justify-content-lg-start">
@@ -53,80 +56,134 @@
             </div>
           </div>
         </div> 
-        
-      </header>
+            
+ </header>
 
-      <main>
 
-        <div class="ms-3 d-flex justify-content-center">
-          <h2 id="app">Zapatería</h2>
-        </div>
-
+ <main>
          <!-- Alerta flotante -->
          <div id="miToast" class="toast">¡Necesitas estar suscrito o inicar sesión!</div>
 
-         <!-- carrusel con bootstrap -->
-         <div class="Carrusel p-4 justify-content-center">
+         
+      
+      <div class="ms-3 d-flex justify-content-center">
+        <h2 id="app">Zapatería</h2>
+      </div>
 
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    
-                <div class="carousel-inner">
-                    <!-- iniciacard -->
+      <section id="descuentos">
+        <div class="Carrusel p-4 justify-content-center">
+          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"> <!-- Añadido autoplay y el intervalo -->
+              <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <div class="d-flex justify-content-center" id="ContCarrusel-foto">
-                      <img src="assets/zapatos1.jpg" class="d-block img-fluid" alt="Anuncio 1">
+                      <div class="d-flex justify-content-center align-items-center" style="height: 400px;">
+                          <div class="card promos">
+                              <div class="row g-0 align-items-center">
+                                  <div class="col-md-4">
+                                      <img src="assets/Modelo1.jpg" class="img-fluid rounded-start" alt="Zapato">
+                                  </div>
+                                  <div class="col-md-8">
+                                      <div class="card-body d-flex flex-column justify-content-center">
+                                          <h5 class="card-title">Zapatos elegantes</h5>
+                                          <p class="card-text">
+                                              Descubre nuestro zapato más vendido, diseñado con materiales premium para garantizar comodidad y estilo en todo momento. Perfecto para cualquier ocasión.
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 400px;">
+                      <div class="card promos">
+                          <div class="row g-0 align-items-center">
+                              <div class="col-md-4">
+                                  <img src="assets/Modelo10.jpg" class="img-fluid rounded-start" alt="Zapato">
+                              </div>
+                              <div class="col-md-8">
+                                  <div class="card-body d-flex flex-column justify-content-center">
+                                      <h5 class="card-title">Tacon dama</h5>
+                                      <p class="card-text">
+                                          Por esta temporada llevate los mejores precios en zapatos de dama.
+                                      </p>
+                                      <p class="card-text"><small class="text-muted">Edición limitada</small></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
                   </div>
                 </div>
-                  <!-- terminacard -->
-    
-                   <!-- iniciacard -->
-                  <div class="carousel-item">
-                    <div class="d-flex justify-content-center" id="ContCarrusel-foto">
-                        <img src="assets/zapatos2.jpg" class="d-block img-fluid" alt="Anuncio 2">
-                </div>
-                </div>
-                  <!-- terminacard -->
-                
-                <!-- iniciacard -->
                 <div class="carousel-item">
-                        <div class="d-flex justify-content-center" id="ContCarrusel-foto">
-                            <img src="assets/zapatos3.jpg" class="d-block img-fluid" alt="Anuncio 3">
+                  <div class="d-flex justify-content-center align-items-center" style="height: 400px;">
+                    <div class="card promos" >
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-4">
+                                <img src="assets/Modelo12.jpg" class="img-fluid rounded-start" alt="Zapato">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body d-flex flex-column justify-content-center">
+                                    <h5 class="card-title">Tenis Nike</h5>
+                                    <p class="card-text">
+                                        ¡Nuevos modelos!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-               </div>
-    
-                   <!-- iniciacard -->
-                  <div class="carousel-item">
-                    <div class="d-flex justify-content-center" id="ContCarrusel-foto">
-                        <img src="assets/zapatos4.jpg" class="d-block img-fluid" alt="Anuncio 4">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="d-flex justify-content-center align-items-center" style="height: 400px;">
+                  <div class="card promos">
+                      <div class="row g-0 align-items-center">
+                          <div class="col-md-4">
+                              <img src="assets/Modelo13.jpg" class="img-fluid rounded-start" alt="Zapato">
+                          </div>
+                          <div class="col-md-8">
+                              <div class="card-body d-flex flex-column justify-content-center">
+                                  <h5 class="card-title">Zapato de Alta Calidad</h5>
+                                  <p class="card-text">
+                                      Perfecto para cualquier ocasión.
+                                  </p>
+                                  <p class="card-text"><small class="text-muted">Disponible en varios tamaños y colores</small></p>
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                </div>
-
-                </div>
-                <!-- terminacard -->
-    
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              </div>
+            </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
-                </button>
-    
-              </div>
-        </div>
+              </button>
+          </div>
+      </div>
       <!-- termina carrusel -->
+       </section>
+
+      <!-- para ver  -->
+
 
       <!-- Mision y vision empresa -->
       <div class="container px-4 py-5" id="featured-3">
-        <h2 class="pb-2 border-bottom">Misión y visión</h2>
+        <h2 class="pb-2 border-bottom">Acerca de nosotros</h2>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
           <div class="feature col">
             <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
                 <i class="bi bi-bullseye"></i>
             </div>
             <h3 class="fs-2 text-body-emphasis">Misión</h3>
-            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            <p>Ofrecer a nuestros clientes una amplia variedad de zapatos de calidad, combinando estilo, comodidad y precios accesibles. Nos esforzamos por brindar una experiencia de compra excepcional, con un servicio personalizado que satisfaga las necesidades de cada cliente.</p>
             <a href="#" class="icon-link">
               Call to action
               <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
@@ -137,7 +194,7 @@
                 <i class="bi bi-eye"></i>
             </div>
             <h3 class="fs-2 text-body-emphasis">Visión</h3>
-            <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            <p>Convertirnos en la tienda de zapatos favorita de nuestra comunidad, destacándonos por nuestra atención al cliente, surtido diverso y un entorno de compra cómodo. Queremos ser reconocidos como el lugar ideal para encontrar calzado para cualquier ocasión.</p>
             <a href="#" class="icon-link">
               Call to action
               <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
@@ -145,28 +202,177 @@
           </div>
         </div>
       </div>
-       <!-- termina misión y vision -->
+ <!-- termina misión y vision -->
         
-      </main>
+
+ <section id="Ver-rapido" class="contenido">
+
+  <div class="imagenes">
+    <!-- card -->
+    <div class="card-image">
+      <img src="assets/Modelo1.jpg" alt="" class="img">
+      <button class="boton">
+          <a href="#">New</a> 
+      </button>                                          
+  </div>
+    <!-- fin card -->
+
+     <!-- card -->
+     <div class="card-image">
+        <img src="assets/Modelo2.jpg" alt="" class="img">
+        <button class="boton">
+            <a href="#">New</a> 
+        </button>                                                
+    </div>
+<!-- fin card -->
+
+ <!-- card -->
+ <div class="card-image">
+    <img src="assets/Modelo3.jpg" alt="" class="img">
+    <button class="boton">
+        <a href="#">New</a> 
+    </button>                                          
+</div>
+<!-- fin card -->
+     <!-- card -->
+     <div class="card-image">
+      <img src="assets/Modelo4.jpg" alt="" class="img">
+      <button class="boton">
+          <a href="#">New</a> 
+      </button>                                     
+  </div>
+    <!-- fin card -->
+
+     <!-- card -->
+     <div class="card-image">
+        <img src="assets/Modelo5.jpg" alt="" class="img">
+        <button class="boton">
+            <a href="#">New</a> 
+        </button>                                            
+    </div>
+<!-- fin card -->
+
+ <!-- card -->
+ <div class="card-image">
+    <img src="assets/Modelo6.jpg" alt="" class="img">
+    <button class="boton">
+        <a href="#">New</a> 
+    </button>                                     
+</div>
+<!-- fin card -->
+  <!-- card -->
+  <div class="card-image">
+    <img src="assets/Modelo7.jpg" alt="" class="img">
+    <button class="boton">
+        <a href="#">New</a> 
+    </button>                                       
+</div>
+<!-- fin card -->
+  <!-- card -->
+  <div class="card-image">
+    <img src="assets/Modelo8.jpg" alt="" class="img">
+    <button class="boton">
+        <a href="#">New</a> 
+    </button>                                         
+</div>
+<!-- fin card -->
+   <!-- card -->
+   <div class="card-image">
+    <img src="assets/Modelo9.jpg" alt="" class="img">
+    <button class="boton">
+        <a href="#">New</a> 
+    </button>                                      
+</div>
+<!-- fin card -->
+   <!-- card -->
+   <div class="card-image">
+    <img src="assets/Modelo10.jpg" alt="" class="img">
+    <button class="boton">
+        <a href="#">New</a> 
+    </button>                                       
+</div>
+<!-- fin card -->
+   <!-- card -->
+   <div class="card-image">
+    <img src="assets/Modelo11.jpg" alt="" class="img">
+    <button class="boton">
+        <a href="#">New</a> 
+    </button>                                          
+</div>
+<!-- fin card -->
+    <!-- card -->
+    <div class="card-image">
+      <img src="assets/Modelo12.jpg" alt="" class="img">
+      <button class="boton">
+          <a href="#">New</a> 
+      </button>                                            
+  </div>
+  <!-- fin card -->
+       <!-- card -->
+<div class="card-image">
+   <img src="assets/Modelo13.jpg" alt="" class="img">
+     <button class="boton">
+    <a href="#">New</a> 
+    </button>                                                  
+</div>
+    <!-- fin card -->
+    <!-- card -->
+<div class="card-image">
+      <img src="assets/Modelo14.jpg" alt="" class="img">
+      <button class="boton">
+          <a href="#">New</a> 
+      </button>                                          
+ </div>
+    <!-- fin card -->
+    <!-- card -->
+<div class="card-image">
+      <img src="assets/Modelo15.jpg" alt="" class="img">
+      <button class="boton">
+          <a href="#">New</a> 
+      </button>                                          
+ </div>
+    <!-- fin card -->
+    <!-- card -->
+ <div class="card-image">
+      <img src="assets/Modelo16.jpg" alt="" class="img">
+      <button class="boton">
+          <a href="#">New</a> 
+      </button>                                          
+ </div>
+    <!-- fin card -->
+        </div>
+</section>
+ </main>
 
       
 
-        <!-- Footer -->
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top" id="footer">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="mb-3 mb-md-0 text-body-secondary">© Zapatería "María José"</span>
+  <!-- Footer -->
+  <footer class="py-5" >
+    <div class="row d-flex justify-content-center">
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <form>
+          <h5>Tu opinión nos importa, ¡déjanos un comentario!</h5>
+          <p>Queremos conocer las opiniones de los demás antes de decidirnos, porque esto nos da confianza en nuestra elección..</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Comenta</label>
+            <input id="newsletter1" type="text" class="form-control">
+            <button class="btn btn-light text-white"  id="btns" type="button">Enviar</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <ul class="nav col-md-4 justify-content list-unstyled d-flex">
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-twitter fs-3"></i></a></li>
-    </ul>
-</footer>
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top p-5">
+      <p>©Zapatería "María Jose"</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-whatsapp fs-3"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram fs-3"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook fs-3"></i></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter fs-3"></i></a></li>
+      </ul>
+    </div>
+  </footer>
 
       <!-- script = funcionalidad para los elementos -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -32,7 +32,15 @@ class Producto {
 
     /**
      * Método para crear un nuevo producto
-     * 
+     * @param int $idCategoria Categoria del producto recibido del formulario.
+     * @param int $idGenero Género del producto recibido del formulario.
+     * @param String $nombre Nombre del producto recibido del formulario.
+     * @param String $modelo Modelo del producto recibido del formulario.
+     * @param String $descripcion Descripción del producto recibido del formulario.
+     * @param int $talla Talla del producto recibido del formulario.
+     * @param int $precio Precio del producto recibido del formulario.
+     * @param int $stock Stock del producto recibido del formulario.
+     * @return bool Devuelve true si la creación fue exitosa, false en caso contrario.
      */
     public function crearProducto($idCategoria, $idGenero, $nombre, $modelo, $descripcion, $talla, $precio, $stock) {
         $query = "INSERT INTO " . $this->table_name . " (idCategoria, idGenero, Nombre, Modelo, Descripcion, Talla, Precio, Stock) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -57,6 +65,15 @@ class Producto {
 
     /**
      * Método para actualizar la información de un Producto.
+     * @param int $idCategoria Categoria del producto recibido del formulario.
+     * @param int $idGenero Género del producto recibido del formulario.
+     * @param String $nombre Nombre del producto recibido del formulario.
+     * @param String $modelo Modelo del producto recibido del formulario.
+     * @param String $descripcion Descripción del producto recibido del formulario.
+     * @param int $talla Talla del producto recibido del formulario.
+     * @param int $precio Precio del producto recibido del formulario.
+     * @param int $stock Stock del producto recibido del formulario.
+     * @param int $idProducto idProducto del producto.
      * @return bool Devuelve true si la actualización fue exitosa, false en caso contrario.
      */
     public function actualizarProducto($idCategoria, $idGenero, $nombre, $modelo, $descripcion, $talla, $precio, $stock, $idProducto) {
@@ -81,6 +98,7 @@ class Producto {
 
     /**
       * Método para eliminar un producto por su ID.
+      * @param int $idProducto idProducto del producto.
       * @return bool Devuelve true si el usuario fue eliminado, false en caso contrario.
       */
       public function eliminarProducto($idProducto) {
@@ -105,6 +123,7 @@ class Producto {
 
     /**
      * Método para obtener todos los productos
+     * @return bool Devuelve tel resultado si la obtención fue exitosa, false en caso contrario.
      */
     public function obtenerProductos(){
 
@@ -127,9 +146,9 @@ class Producto {
     /**
      * Método para filtrar productos.
      *
-     * @param int|null $idGenero     El ID del género (opcional).
-     * @param int|null $talla        La talla del producto (opcional).
-     * @param int|null $idCategoria  El ID de la categoría (opcional).
+     * @param int|null $idGenero     El ID del género.
+     * @param int|null $talla        La talla del producto.
+     * @param int|null $idCategoria  El ID de la categoría.
      *
      * @return mysqli_result|false Resultado de la consulta o false en caso de error.
      */

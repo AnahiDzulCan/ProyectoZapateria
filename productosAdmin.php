@@ -54,7 +54,7 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    <title>Catalogo</title>
+    <title>Catálogo de zapatos</title>
 </head>
 
 <body>
@@ -81,7 +81,7 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
             <ul class="navbar-nav ">
                   <li><a href="home.html" class="nav-link fs-6"><i class="bi bi-house-fill"></i> Home</a></li>
                   <li><a href="productos.php" class="nav-link fs-6"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
-                  <li><a href="carrito.html" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+                  <li><a href="carrito.php" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
                   <li><a href="usuario.php" class="nav-link fs-6"><i class="bi bi-person-heart"></i> Perfil</a></li>
             </ul>
         </div>      
@@ -97,6 +97,8 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
             <div class="container d-flex flex-wrap justify-content-lg-end">
             <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="registroProducto.html">Crear Producto</a></button>
             <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="php/VerRegistros.php">Ver Registros Usuarios</a></button>
+            <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="ventasMensuales.html">Ver total de ventas mensuales</a></button>
+            <button type="button" class="btn btn-light text-dark me-2"  id="btns"><a href="ventasAnuales.html">Ver total de ventas anuales</a></button>
                 <div class="text-end">
                     <div class="dropdown" data-bs-theme="light">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">

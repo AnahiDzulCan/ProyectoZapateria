@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['accion']) && $_POST['a
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <title>Lista de Usuarios</title>
+    <title>Lista de usuarios</title>
 
 </head>
 <body>
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['accion']) && $_POST['a
           <ul class="navbar-nav ">
             <li><a href="../home.html" class="nav-link fs-6"><i class="bi bi-house-fill"></i> Home</a></li>
             <li><a href="../productosAdmin.php" class="nav-link fs-6"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
-            <li><a href="../carrito.html" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+            <li><a href="../carrito.php" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
             <li><a href="../usuario.php" class="nav-link fs-6"><i class="bi bi-person-heart"></i> Perfil</a></li>
           </ul>
        </div>
@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['accion']) && $_POST['a
     <p>No hay usuarios registrados.</p>
 <?php endif; ?>
 
-<button  onclick="window.location.href='../productosAdmin.php'" type="button" class="btn btn-light text-dark me-2 m-3"  id="btns" >Regresar</button>
+<button  onclick="window.location.href='../productosAdmin.php'" type="button" class="btn btn-light text-white"  id="btns" >Regresar</button>
 
 </main>
  <!-- Footer -->

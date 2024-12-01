@@ -61,7 +61,7 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    <title>Catalogo</title>
+    <title>Catálogo de zapatos</title>
 </head>
 
 <body>
@@ -88,7 +88,7 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
             <ul class="navbar-nav ">
                   <li><a href="home.html" class="nav-link fs-6"><i class="bi bi-house-fill"></i> Home</a></li>
                   <li><a href="productos.php" class="nav-link fs-6"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
-                  <li><a href="carrito.html" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+                  <li><a href="carrito.php" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
                   <li><a href="usuario.php" class="nav-link fs-6"><i class="bi bi-person-heart"></i> Perfil</a></li>
             </ul>
         </div>      
@@ -150,6 +150,8 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
             <?php
+            include_once 'php/logCarrito.php';
+            include_once 'php/ProductoController.php';
             
             if ($productos) {
                 while ($producto_row = $productos->fetch_assoc()) {
@@ -165,10 +167,19 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
                                     <li class="list-group-item">Género: <?php echo htmlspecialchars($producto_row['Genero']); ?></li>
                                     <li class="list-group-item">Precio: <?php echo htmlspecialchars($producto_row['Precio']); ?></li>
                                     <li class="list-group-item">Stock: <?php echo htmlspecialchars($producto_row['Stock']); ?></li>
+                                    <li class="list-group-item">Código: <?php echo htmlspecialchars($producto_row['idProducto']); ?></li>
                                 </ul>
                                 <p class="card-text"><?php echo htmlspecialchars($producto_row['Descripcion']); ?></p>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button type="button" id="btns" class="btn btn-light text-white">Añadir al carrito</button>
+                                    <form id="formCarrito" method="POST" action="php/logCarrito.php">
+                                        <input type="hidden" name="accion" value="agregar">
+                                        <input type="hidden" name="idProducto" value="<?php echo htmlspecialchars($producto_row['idProducto']);?>">
+                                        <input type="hidden" name="modelo" value="<?php echo htmlspecialchars($producto_row['Modelo']);?>">
+                                        <input type="hidden" name="nombre" value="<?php echo htmlspecialchars($producto_row['Descripcion']);?>">
+                                        <input type="hidden" name="precio" value="<?php echo htmlspecialchars($producto_row['Precio']);?>">
+                                        <button type="submit" id="btns" class="btn btn-light text-white">Añadir al carrito</button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>

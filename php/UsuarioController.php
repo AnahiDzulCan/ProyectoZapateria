@@ -26,6 +26,8 @@ class UsuarioController{
 
     /**
      * Método que hace el llamado para registrar un usuario
+     * @param array $datos que contiene los datos del usuario.
+     * @return bool true si el registro fue exitoso, false en caso contrario.
      */
     public function registrarUsuario($datos){
 
@@ -45,6 +47,8 @@ class UsuarioController{
 
     /**
      * Método que hace el llamado para editar un usuario
+     * @param array $datos que contiene los datos del usuario.
+     * @return bool true si la actualización fue exitosa, false en caso contrario.
      */
     public function editarUsuario($datos){
         if($this->usuario->actualizarUsuario($datos['nombre'], $datos['apellido'], $datos['password'], $datos['idgenero'])){
@@ -56,6 +60,8 @@ class UsuarioController{
 
     /**
      * Método que hace el llamado para eliminar un usuario
+     * @param int $idUsuario idUsuario del usuario.
+     * @return String "Usuario eliminado correctamente." si la eliminación fue exitosa, "Error al eliminar el usuario." en caso contrario.
      */
     public function eliminarUsuario($idUsuario){
         if($this->usuario->eliminarUsuario($idUsuario)){
@@ -67,6 +73,7 @@ class UsuarioController{
 
     /**
      * Método para listar los usuarios
+     * @return array lista de usuarios.
      */
     public function listarUsuarios(){
         return $this->usuario->obtenerUsuarios();

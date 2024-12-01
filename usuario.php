@@ -102,7 +102,7 @@ if ($stmt = $conn->prepare($query)) {
          <ul class="navbar-nav ">
                <li><a href="home.html" class="nav-link fs-6"><i class="bi bi-house-fill"></i> Home</a></li>
                <li><a href="productos.php" class="nav-link fs-6"><i class="bi bi-bag-heart-fill"></i> Productos</a></li>
-               <li><a href="carrito.html" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
+               <li><a href="carrito.php" class="nav-link fs-6"><i class="bi bi-cart-fill"></i> Carrito</a></li>
                <li><a href="usuario.php" class="nav-link fs-6"><i class="bi bi-person-heart"></i> Perfil</a></li>
          </ul>
      </div>      

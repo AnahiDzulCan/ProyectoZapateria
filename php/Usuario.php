@@ -30,6 +30,12 @@ class Usuario {
  
     /**
      * Método para crear un nuevo usuario.
+     * @param String $nombre Nombre del usuario recibido del formulario.
+     * @param String $apellido Apellido del usuario recibido del formulario.
+     * @param String $email Email del usuario recibido del formulario.
+     * @param int $password Contraseña del usuario recibido del formulario.
+     * @param int $idGenero Género del usuario recibido del formulario.
+     * @param int $idRol Rol del usuario recibido del controlador.
      * @return bool Devuelve true si el usuario se creó correctamente, false en caso contrario.
      */
     public function crearUsuario($nombre, $apellido, $email, $password, $idGenero, $idRol) {
@@ -55,6 +61,10 @@ class Usuario {
  
     /**
      * Método para actualizar la información de un usuario.
+     * @param String $nombre Nombre del usuario recibido del formulario.
+     * @param String $apellido Apellido del usuario recibido del formulario.
+     * @param int $password Contraseña del usuario recibido del formulario.
+     * @param int $idGenero Género del usuario recibido del formulario.
      * @return bool Devuelve true si la actualización fue exitosa, false en caso contrario.
      */
     public function actualizarUsuario($nombre, $apellido, $password, $idGenero) {
@@ -89,6 +99,7 @@ class Usuario {
  
     /**
       * Método para eliminar un usuario por su ID.
+      * @param int $idUsuario ID del usuario recibido del controlador.
       * @return bool Devuelve true si el usuario fue eliminado, false en caso contrario.
       */
     public function eliminarUsuario($idUsuario) {
@@ -112,43 +123,9 @@ class Usuario {
     }
 
     /**
-    * Método para obtener un usuario por su correo electrónico.
-    * @return bool Devuelve true si el usuario fue encontrado, false en caso contrario.
-    */
-    public function obtenerPorEmail() {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE Email = ?";
- 
-        if ($stmt = $this->conn->prepare($query)) {
-            // Enlazar el parámetro
-            $stmt->bind_param("s", $this->email);
- 
-            // Ejecutar la consulta
-            $stmt->execute();
- 
-            // Obtener el resultado
-            $result = $stmt->get_result();
- 
-            if ($row = $result->fetch_assoc()) {
-                // Asignar los valores a los atributos de la clase
-                $this->idUsuario = $row['idUsuario'];
-                $this->nombre = $row['Nombre'];
-                $this->apellido = $row['Apellido'];
-                $this->email = $row['Email'];
-                $this->password = $row['Password'];
-                $this->genero = $row['idGenero'];
-                $this->idRol = $row['idRol'];
- 
-                return true;
-            }
-        } else {
-            error_log("Error en la preparación de la consulta: " . $this->conn->error);
-        }
- 
-        return false;
-    }
-
-    /**
      * Método para verificar si ya existe un usuario
+     * @param String $email Email del usuario recibido del formulario.
+     * @return bool Devuelve true si se encontró un correo, false en caso contrario.
      */
     public function verificarCorreo($email) {
         $query = "SELECT 1 FROM " . $this->table_name . " WHERE Email = ? LIMIT 1";
@@ -185,6 +162,9 @@ class Usuario {
 
     /**
      * Método para iniciar sesión
+     * @param String $email Email del usuario recibido del formulario.
+     * @param int $password Contraseña del usuario recibido del formulario.
+     * @return bool Devuelve true si las credecianles fueron correctas, false en caso contrario.
      */
     public function iniciarSesion($email, $password){
 

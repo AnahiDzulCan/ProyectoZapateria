@@ -26,6 +26,8 @@ class ProductoController{
 
     /**
      * Método que hace el llamado para crear un producto
+     * @param array $datos que contiene los datos del producto.
+     * @return bool true si la actualización fue exitosa, false en caso contrario.
      */
     public function crearProducto($datos){
         if($this->producto->crearProducto($datos['idCategoria'], $datos['idGenero'], $datos['Nombre'], $datos['Modelo'], $datos['Descripcion'], $datos['Talla'], $datos['Precio'], $datos['Stock'])){
@@ -36,6 +38,9 @@ class ProductoController{
     }
 
     /**
+     * @param array $datos que contiene los datos del producto.
+     * @param int $idProducto idProcuto del producto.
+     * @return bool true si la actualización fue exitosa, false en caso contrario.
      * Método que hace el llamado para editar un Producto
      */
     public function editarProducto($idProducto,$datos){
@@ -48,6 +53,8 @@ class ProductoController{
 
     /**
      * Método que hace el llamado para eliminar un Producto
+     * @param int $idProducto idProcuto del producto.
+     * @return bool true si la eliminación fue exitosa, false en caso contrario.
      */
     public function eliminarProducto($idProducto){
         if($this->producto->eliminarProducto($idProducto)){
@@ -59,6 +66,7 @@ class ProductoController{
 
     /**
      * Método para obtener los productos
+     * @param array retorna la lista de productos.
      */
     public function listarProductos(){
         return $this->producto->obtenerProductos();

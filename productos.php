@@ -103,21 +103,6 @@ if ($filtroGenero || $filtroTalla || $filtroCategoria) {
         <div class="px-3 py-2 border-bottom mb-3">
             <div class="container d-flex flex-wrap justify-content-lg-end">
                 <div class="text-end">
-                    <!-- <div class="dropdown" data-bs-theme="light">
-                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
-                          Filtrar
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
-                          <li><a class="dropdown-item active" href="#">Dama</a></li>
-                          <li><a class="dropdown-item" href="#">Caballero</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li>
-                            <form class="p-2 mb-2 bg-body-tertiary border-bottom">
-                            <input type="search" class="form-control" autocomplete="false" placeholder="Talla">
-                            </form>
-                        </li>
-                        </ul>
-                      </div> -->
 
                       <div class="dropdown" data-bs-theme="light">
                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,3 +1,12 @@
+<?php
+
+/**
+ * @author Raul Alexander Palomo Pech
+ * @author Anahi del Rosario Dzul Can
+ */
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -67,7 +76,6 @@
                       <h2>Tus compras</h2>
                     </div>
                     <!-- Producto -->
-
                     <?php
                     $carrito = new Carrito();
                     $carritoArray = $carrito->obtenerCarrito();
@@ -91,11 +99,11 @@
                         </div>
                       </div>
                     </div>";
-        }
-      ?>      
-                              <!-- Fin de los productos -->          
+                    }
+                    ?>      
+                    <!-- Fin de los productos -->          
                   </div>
-                    <form method="POST">
+                    <form method="POST" action="php/logCarrito.php">
                       <input type="hidden" name="carrito" value="<?php echo htmlspecialchars(json_encode($carritoArray)); ?>">
                       <input type="hidden" name="total" value="<?php echo htmlspecialchars($total); ?>">
                         <button type="submit" id="btns" class="btn btn-light text-white" name="accion" value="comprar" <?php echo empty($carritoArray) ? 'disabled' : ''; ?>>Comprar</button>

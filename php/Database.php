@@ -3,6 +3,9 @@
  * @author Pedro José Bacab Pech
  */
 
+ /**
+  * Clase de la base de datos
+  */
 class Database{
     
     //Atributos de la clase
@@ -10,6 +13,7 @@ class Database{
     private $db_name = "zapateriadb"; // Nombre de la base de datos
     private $username = "root"; // Usuario de la base de datos
     private $password = ""; //Contraseña de la base de datos
+    private $conn;
 
     /**
      * Función para obtener la conexión

@@ -10,7 +10,7 @@
  */
 class Producto {
     private $conn;// Conexión a la base de datos
-    private $table_name = "Producto"; // Nombre de la tabla asociada
+    private $table_name = "producto"; // Nombre de la tabla asociada
 
     // Atributos del producto
     public $idProducto;  // Identificador único del producto
@@ -127,9 +127,9 @@ class Producto {
      */
     public function obtenerProductos(){
 
-        $query = "SELECT p.idProducto, p.Nombre, p.Modelo, p.Descripcion, p.Talla, p.Precio, P.Stock, g.Nombre AS Genero
+        $query = "SELECT p.idProducto, p.Nombre, p.Modelo, p.Descripcion, p.Talla, p.Precio, p.Stock, g.Nombre AS Genero
               FROM " . $this->table_name . " p
-              JOIN genero g ON p.idGenero = g.idGenero"; // Realizamos el JOIN correctamente
+              JOIN genero g ON p.idGenero = g.idGenero"; 
 
         $stmt = $this->conn->prepare($query);
 
@@ -201,6 +201,48 @@ class Producto {
     $result = $stmt->get_result();
 
     return $result;
+    }
+
+    /**
+     * Método que actualiza el stock del producto
+     * @param int $idProducto identificador del producto
+     * @param int $cantidad cantidad a comprar
+     * @return false|execute retorna la ejecución de la consulta si hay stock, false en caso contrario
+     */
+    public function actualizarStock($idProducto, $cantidad){
+        $query = "SELECT * FROM " . $this->table_name . " WHERE idProducto = ?";
+        
+        if ($stmt = $this->conn->prepare($query)) {
+            // Enlazar el parámetro
+            $stmt->bind_param("i", $idProducto);
+            $stmt->execute();
+
+            $resultado = $stmt->get_result();
+            $producto = $resultado->fetch_assoc();
+
+            if (!$producto || $producto['Stock'] < $cantidad) {
+                // No hay suficiente stock
+                return false;
+            }
+
+            //Actualizar stock
+            $nuevoStock = $producto['Stock'] - $cantidad;
+            $query = "UPDATE " . $this->table_name . " SET Stock = ? WHERE idProducto = ?";
+
+            if($stmt = $this->conn->prepare($query)){
+                $stmt->bind_param("ii", $nuevoStock, $idProducto);
+
+                return $stmt->execute();
+            }else{
+                error_log("Error en la preparación de la consulta: " . $this->conn->error);
+            }
+            
+        } else {
+             error_log("Error en la preparación de la consulta: " . $this->conn->error);
+        }
+
+        return false;
+
     }
 
 }

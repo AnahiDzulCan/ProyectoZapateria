@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['accion']) && $_POST['a
     <nav class="navbar header-nav navbar-expand-lg" id="navbar-header">
              <!-- Logo  -->
       <div class="containerlogo d-flex justify-content-between align-items-center p-3">
-        <a href="home.html" class="navbar-brand">
+        <a href="../home.html" class="navbar-brand">
           <img class="logo" src="../assets/logo.png" alt="logo"> <h5 class=" m-0 text-white ">Zapatería "María Jose"</h5>
         </a>
       </div>

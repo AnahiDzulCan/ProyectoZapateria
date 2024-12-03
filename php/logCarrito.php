@@ -1,6 +1,11 @@
 <?php
 
+/**
+ * @author Raul Alexander Palomo Pech
+ */
+
 include_once 'Venta.php';
+include_once 'Producto.php';
 include_once 'Database.php';
 
 if (session_status() === PHP_SESSION_NONE) {
@@ -10,6 +15,9 @@ if (session_status() === PHP_SESSION_NONE) {
 $controlCarrito = new Carrito();
 $controlCarrito->manejadorAccionesCarrito();
 
+/**
+  * Clase carrito
+  */
 class Carrito {
 
     /**
@@ -18,11 +26,13 @@ class Carrito {
     private $carrito;
     private $database;
     private $venta;
+    private $producto;
 
     public function __construct() {
         $this->database = new Database();
         $conexion = $this->database->getConexionDB();
         $this->venta = new Venta($conexion);
+        $this->producto = new Producto($conexion);
 
         // Inicializar el carrito si no existe
         if (!isset($_SESSION['carrito'])) {
@@ -53,7 +63,7 @@ function manejadorAccionesCarrito() {
             case 'agregar':
 
                 $producto = [
-                    'id' => htmlspecialchars($_POST['idProducto']),
+                    'id' => (int) htmlspecialchars($_POST['idProducto']),
                     'nombre' => htmlspecialchars($_POST['nombre']),
                     'precio' => htmlspecialchars($_POST['precio']),
                     'modelo' => htmlspecialchars($_POST['modelo']),
@@ -105,11 +115,29 @@ function manejadorAccionesCarrito() {
                  // Decodificar el JSON recibido en un array o objeto
                  $carrito = json_decode($carritoJson, true); // true convierte a un array, false lo mantiene como objeto
 
+                 //Validar conversión del JSON
+                 if (!$carrito || !is_array($carrito)) {
+                    echo "<p class='text-white'>Error: Carrito inválido o vacío. Compra cancelada.</p>";
+                    exit;
+                }
+
+                
+                foreach($carrito as $producto) {
+                    $idProducto = (int) $producto['id']; // Convertir a entero
+                    $cantidad = (int) $producto['cantidad']; // Asegurarse de que la cantidad también es un entero
+                
+                    if (!$this->producto->actualizarStock($idProducto, $cantidad)) {
+                        echo "<script>alert('Error: No hay suficiente stock para el producto seleccionado. Compra cancelada.'); window.location.href = '../carrito.php'</script>";
+                        exit; // Detener el proceso si no hay suficiente stock
+                    }
+                }
+
+
                  // Llamar a la función para realizar la compra
                  $exito = $this->venta->crearVenta($idUsuario, $carrito, $total);
                  
                  if ($exito) {
-                    echo "<script>alert('¡Compra realizada con éxito!');</script>";
+                    echo "<script>alert('¡Compra realizada con éxito!'); window.location.href = '../carrito.php'</script>";
                     $_SESSION['carrito'] = []; // Vaciar el carrito después de la compra
                     } else {
                         echo "<script>alert('Hubo un error al realizar la compra. Intenta de nuevo.');</script>";
@@ -160,7 +188,7 @@ function mostrarCarrito($carrito) {
                             </div>
                     </div>
                         <div class='d-flex flex-row align-items-center'>
-                            <div style='width: 50px;''>
+                            <div style='width: 120px;''>
                                 <h5 class='fw-normal mb-0'>Cantidad: {$cantidad}</h5>
                             </div>
                             <div style='width: 80px;'>

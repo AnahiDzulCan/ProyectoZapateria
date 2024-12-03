@@ -3,7 +3,11 @@
 /**
  * @author Pedro Jose Bacab Pech
  */
-/** Venta.php **/
+
+
+ /**
+  * Clase de la venta
+  */
 class Venta {
     
     private $conn; // Conexión a la base de datos
